@@ -1,40 +1,24 @@
 {
-  "name": "boparaiamrit/notifynder",
-  "description": "Management system of internal notifications for Laravel 5.*",
-  "keywords": ["notifications", "laravel"],
-  "license": "MIT",
-  "authors": [
-    {
-      "name": "Fabrizio Fenoglio",
-      "email": "fabri_feno@yahoo.it",
-      "role": "Developer"
-    }
-  ],
-  "require": {
-    "php": ">=5.5.0",
-    "illuminate/support": "~5.0",
-    "doctrine/dbal": "^2.5"
-  },
-  "require-dev": {
-    "laravel/framework": "~5.0",
-    "phpunit/phpunit": "~4.0|~5.0",
-    "phpspec/phpspec": "~2.1",
-    "laracasts/testdummy": "~2.0",
-    "orchestra/testbench": "~3.0",
-    "codeclimate/php-test-reporter": "^0.3.2"
-  },
-  "autoload": {
-    "psr-4": {
-      "Boparaiamrit\\Notifynder\\": "src/Notifynder"
-    }
-  },
-  "autoload-dev": {
-    "classmap": [
-      "tests/TestCaseDB.php"
-    ],
-    "psr-4": {
-      "Boparaiamrit\\Tests\\": "tests/models"
-    }
-  },
-  "minimum-stability": "stable"
+	"name": "boparaiamrit/notifynder",
+	"description": "Management system of internal notifications for Laravel 5.*",
+	"keywords": [
+		"notifications",
+		"laravel"
+	],
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Amritpal Singh",
+			"email": "boparaiamrit@gmail.com"
+		}
+	],
+	"require": {
+		"php": ">=5.6"
+	},
+	"autoload": {
+		"psr-4": {
+			"Boparaiamrit\\Notifynder\\": "src/Notifynder"
+		}
+	},
+	"minimum-stability": "stable"
 }
