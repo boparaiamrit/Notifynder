@@ -1,5 +1,5 @@
 {
-  "name": "fenos/notifynder",
+  "name": "boparaiamrit/notifynder",
   "description": "Management system of internal notifications for Laravel 5.*",
   "keywords": ["notifications", "laravel"],
   "license": "MIT",
@@ -17,7 +17,7 @@
   },
   "require-dev": {
     "laravel/framework": "~5.0",
-    "phpunit/phpunit": "~4.0",
+    "phpunit/phpunit": "~4.0|~5.0",
     "phpspec/phpspec": "~2.1",
     "laracasts/testdummy": "~2.0",
     "orchestra/testbench": "~3.0",
