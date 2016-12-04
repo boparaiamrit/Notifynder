@@ -1,15 +1,15 @@
 <?php
 
-namespace Fenos\Notifynder\Senders;
+namespace Boparaiamrit\Notifynder\Senders;
 
 /*
  * Class NotifynderSenderFactory
  *
- * @package Fenos\Notifynder
+ * @package Boparaiamrit\Notifynder
  */
-use Fenos\Notifynder\Builder\NotifynderBuilder;
-use Fenos\Notifynder\Contracts\NotifynderCategory;
-use Fenos\Notifynder\Contracts\NotifynderGroup;
+use Boparaiamrit\Notifynder\Builder\NotifynderBuilder;
+use Boparaiamrit\Notifynder\Contracts\NotifynderCategory;
+use Boparaiamrit\Notifynder\Contracts\NotifynderGroup;
 
 /**
  * Class SenderFactory.

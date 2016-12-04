@@ -1,9 +1,9 @@
 <?php
 
-namespace Fenos\Notifynder\Contracts;
+namespace Boparaiamrit\Notifynder\Contracts;
 
-use Fenos\Notifynder\Senders\SendOne;
-use Fenos\Notifynder\Senders\SendMultiple;
+use Boparaiamrit\Notifynder\Senders\SendOne;
+use Boparaiamrit\Notifynder\Senders\SendMultiple;
 
 /**
  * Class SenderManager.

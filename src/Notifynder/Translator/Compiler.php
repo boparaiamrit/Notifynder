@@ -1,6 +1,6 @@
 <?php
 
-namespace Fenos\Notifynder\Translator;
+namespace Boparaiamrit\Notifynder\Translator;
 
 use Illuminate\Contracts\Filesystem\Filesystem;
 

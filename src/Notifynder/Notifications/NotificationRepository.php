@@ -1,10 +1,10 @@
 <?php
 
-namespace Fenos\Notifynder\Notifications;
+namespace Boparaiamrit\Notifynder\Notifications;
 
 use Closure;
-use Fenos\Notifynder\Contracts\NotificationDB;
-use Fenos\Notifynder\Models\Notification;
+use Boparaiamrit\Notifynder\Contracts\NotificationDB;
+use Boparaiamrit\Notifynder\Models\Notification;
 use Illuminate\Database\DatabaseManager;
 use Illuminate\Database\Connection;
 use Illuminate\Database\Eloquent\Builder;

@@ -1,6 +1,6 @@
 <?php
 
-namespace Fenos\Notifynder\Builder;
+namespace Boparaiamrit\Notifynder\Builder;
 
 use Illuminate\Contracts\Config\Repository;
 use InvalidArgumentException;

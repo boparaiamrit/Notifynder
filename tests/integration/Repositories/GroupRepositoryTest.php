@@ -1,7 +1,7 @@
 <?php
 
-use Fenos\Notifynder\Groups\GroupRepository;
-use Fenos\Notifynder\Models\NotificationGroup;
+use Boparaiamrit\Notifynder\Groups\GroupRepository;
+use Boparaiamrit\Notifynder\Models\NotificationGroup;
 
 /**
  * Class GroupRepositoryTest.

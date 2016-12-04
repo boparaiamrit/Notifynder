@@ -1,10 +1,10 @@
 <?php
 
-namespace Fenos\Notifynder\Categories;
+namespace Boparaiamrit\Notifynder\Categories;
 
-use Fenos\Notifynder\Contracts\CategoryDB;
-use Fenos\Notifynder\Contracts\NotifynderCategory;
-use Fenos\Notifynder\Exceptions\CategoryNotFoundException;
+use Boparaiamrit\Notifynder\Contracts\CategoryDB;
+use Boparaiamrit\Notifynder\Contracts\NotifynderCategory;
+use Boparaiamrit\Notifynder\Exceptions\CategoryNotFoundException;
 
 /**
  * Class CategoryManager.
@@ -37,8 +37,9 @@ class CategoryManager implements NotifynderCategory
     public function findByName($name)
     {
         $category = $this->categoryRepo->findByName($name);
-
+		
         if (is_null($category)) {
+        	dd(debug_print_backtrace());
             $error = 'Category Not Found';
             throw new CategoryNotFoundException($error);
         }
@@ -90,7 +91,7 @@ class CategoryManager implements NotifynderCategory
      *
      * @param  array                                         $name
      * @param                                                $text
-     * @return \Fenos\Notifynder\Models\NotificationCategory
+     * @return \Boparaiamrit\Notifynder\Models\NotificationCategory
      */
     public function add($name, $text)
     {

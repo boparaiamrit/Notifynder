@@ -1,8 +1,8 @@
 <?php
 
-namespace Fenos\Notifynder\Models;
+namespace Boparaiamrit\Notifynder\Models;
 
-use Illuminate\Database\Eloquent\Model;
+use Jenssegers\Mongodb\Eloquent\Model;
 
 /**
  * Class NotificationGroup.
@@ -25,7 +25,7 @@ class NotificationGroup extends Model
     public function categories()
     {
         return $this->belongsToMany(
-            'Fenos\Notifynder\Models\NotificationCategory',
+            'Boparaiamrit\Notifynder\Models\NotificationCategory',
             'notifications_categories_in_groups',
             'group_id', 'category_id'
         );

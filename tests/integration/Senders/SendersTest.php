@@ -1,9 +1,9 @@
 <?php
 
-use Fenos\Notifynder\Builder\NotifynderBuilder;
-use Fenos\Notifynder\Contracts\NotifynderGroup;
-use Fenos\Notifynder\Contracts\NotifynderSender;
-use Fenos\Notifynder\Models\Notification;
+use Boparaiamrit\Notifynder\Builder\NotifynderBuilder;
+use Boparaiamrit\Notifynder\Contracts\NotifynderGroup;
+use Boparaiamrit\Notifynder\Contracts\NotifynderSender;
+use Boparaiamrit\Notifynder\Models\Notification;
 
 /**
  * Class SendersTest.
@@ -37,7 +37,7 @@ class SendersTest extends TestCaseDB
         // Set the model from the config
         app('config')->set(
             'notifynder.notification_model',
-            'Fenos\Notifynder\Models\Notification'
+            'Boparaiamrit\Notifynder\Models\Notification'
         );
 
         $this->senders = app('notifynder.sender');

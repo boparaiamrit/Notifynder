@@ -1,12 +1,12 @@
 <?php
 
-namespace Fenos\Tests\Models;
+namespace Boparaiamrit\Tests\Models;
 
-use Fenos\Notifynder\Notifable;
+use Boparaiamrit\Notifynder\Notifynderable;
 
 class User extends \Illuminate\Database\Eloquent\Model
 {
     // Never do this
     protected $fillable = ['id'];
-    use Notifable;
+    use Notifynderable;
 }

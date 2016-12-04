@@ -1,7 +1,7 @@
 <?php
 
-use Fenos\Notifynder\Contracts\NotifyListener;
-use Fenos\Notifynder\Handler\NotifynderEvent;
+use Boparaiamrit\Notifynder\Contracts\NotifyListener;
+use Boparaiamrit\Notifynder\Handler\NotifynderEvent;
 
 /**
  * Class NotifyEvent.

@@ -24,11 +24,8 @@
     "codeclimate/php-test-reporter": "^0.3.2"
   },
   "autoload": {
-    "classmap": [
-
-    ],
     "psr-4": {
-      "Fenos\\Notifynder\\": "src/Notifynder"
+      "Boparaiamrit\\Notifynder\\": "src/Notifynder"
     }
   },
   "autoload-dev": {
@@ -36,7 +33,7 @@
       "tests/TestCaseDB.php"
     ],
     "psr-4": {
-      "Fenos\\Tests\\": "tests/models"
+      "Boparaiamrit\\Tests\\": "tests/models"
     }
   },
   "minimum-stability": "stable"

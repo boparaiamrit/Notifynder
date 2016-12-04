@@ -1,6 +1,6 @@
 <?php
 
-namespace Fenos\Notifynder\Facades;
+namespace Boparaiamrit\Notifynder\Facades;
 
 use Illuminate\Support\Facades\Facade;
 

@@ -1,10 +1,10 @@
 <?php
 
-namespace Fenos\Notifynder\Translator;
+namespace Boparaiamrit\Notifynder\Translator;
 
-use Fenos\Notifynder\Contracts\NotifynderTranslator;
-use Fenos\Notifynder\Exceptions\NotificationLanguageNotFoundException;
-use Fenos\Notifynder\Exceptions\NotificationTranslationNotFoundException;
+use Boparaiamrit\Notifynder\Contracts\NotifynderTranslator;
+use Boparaiamrit\Notifynder\Exceptions\NotificationLanguageNotFoundException;
+use Boparaiamrit\Notifynder\Exceptions\NotificationTranslationNotFoundException;
 use Illuminate\Contracts\Config\Repository;
 
 /**

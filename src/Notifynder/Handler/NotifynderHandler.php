@@ -1,9 +1,9 @@
 <?php
 
-namespace Fenos\Notifynder\Handler;
+namespace Boparaiamrit\Notifynder\Handler;
 
-use Fenos\Notifynder\Contracts\NotifyListener;
-use Fenos\Notifynder\Notifynder;
+use Boparaiamrit\Notifynder\Contracts\NotifyListener;
+use Boparaiamrit\Notifynder\Notifynder;
 
 /**
  * Class NotifynderHandler.

@@ -1,8 +1,8 @@
 <?php
 
-namespace Fenos\Notifynder\Artisan;
+namespace Boparaiamrit\Notifynder\Artisan;
 
-use Fenos\Notifynder\Contracts\NotifynderGroup;
+use Boparaiamrit\Notifynder\Contracts\NotifynderGroup;
 use Illuminate\Console\Command;
 use Symfony\Component\Console\Input\InputArgument;
 
@@ -31,7 +31,7 @@ class CreateGroup extends Command
      * Create a new command instance.
      *
      * @param  NotifynderGroup                    $notifynderGroup
-     * @return \Fenos\Notifynder\Artisan\CreateGroup
+     * @return \Boparaiamrit\Notifynder\Artisan\CreateGroup
      */
     public function __construct(NotifynderGroup $notifynderGroup)
     {

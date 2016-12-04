@@ -1,6 +1,6 @@
 <?php
 
-use Fenos\Notifynder\Notifications\NotificationManager;
+use Boparaiamrit\Notifynder\Notifications\NotificationManager;
 
 /**
  * Class NotificationTest.
@@ -24,7 +24,7 @@ class NotificationTest extends TestCaseDB
      */
     protected $to = [
         'id' => 1,
-        'type' => 'Fenos\Tests\Models\User',
+        'type' => 'Boparaiamrit\Tests\Models\User',
     ];
 
     /**
@@ -81,7 +81,7 @@ class NotificationTest extends TestCaseDB
         $notifications = $this->notification->getNotRead($notification->to->id, 10, false);
 
         $this->assertCount(10, $notifications);
-        $this->assertInstanceOf(\Fenos\Notifynder\Models\NotifynderCollection::class, $notifications);
+        $this->assertInstanceOf(\Boparaiamrit\Notifynder\Models\NotifynderCollection::class, $notifications);
     }
 
     /** @test */
@@ -131,7 +131,7 @@ class NotificationTest extends TestCaseDB
         $category = $this->createCategory(['text' => 'parse this {extra.look} value', 'name' => 'text']);
         $this->createMultipleNotifications(['category_id' => $category->id]);
 
-        $user = new \Fenos\Tests\Models\User(['id' => $this->to['id']]);
+        $user = new \Boparaiamrit\Tests\Models\User(['id' => $this->to['id']]);
 
         $notificationByCategory = $user->getNotifications(false, false, 'desc', function ($query) use ($category) {
             $query->byCategory('text');
@@ -153,7 +153,7 @@ class NotificationTest extends TestCaseDB
             'icon_type',
         ]);
 
-        $model = app(\Fenos\Notifynder\Models\Notification::class);
+        $model = app(\Boparaiamrit\Notifynder\Models\Notification::class);
         $fillable = [
             'to_id', 'to_type', 'from_id', 'from_type', 'category_id', 'read', 'url', 'extra', 'expire_time', 'stack_id', 'icon_type',
         ];
@@ -178,10 +178,10 @@ class NotificationTest extends TestCaseDB
     /** @test */
     public function it_retrieve_notification_with_parsed_body_and_multi_dots_with_objects()
     {
-        $user = new \Fenos\Tests\Models\User(['id' => '1']);
+        $user = new \Boparaiamrit\Tests\Models\User(['id' => '1']);
         $object = json_decode(json_encode(['last' => 'Doe', 'first' => 'John']), false);
 
-        $this->assertInstanceOf(\Fenos\Tests\Models\User::class, $user);
+        $this->assertInstanceOf(\Boparaiamrit\Tests\Models\User::class, $user);
         $this->assertInstanceOf(stdClass::class, $object);
 
         $extraValues = json_encode(['look' => 'Amazing', 'user' => $user, 'object' => $object]);
@@ -207,7 +207,7 @@ class NotificationTest extends TestCaseDB
         $extra = $notifications->first()->extra;
 
         $this->assertCount(1, $notifications);
-        $this->assertInstanceOf(\Fenos\Notifynder\Notifications\ExtraParams::class, $extra);
+        $this->assertInstanceOf(\Boparaiamrit\Notifynder\Notifications\ExtraParams::class, $extra);
         $this->assertEquals('Amazing', $extra->look);
     }
 
@@ -237,7 +237,7 @@ class NotificationTest extends TestCaseDB
 
         $this->createMultipleNotifications(['category_id' => $category->id]);
 
-        $notifications = \Fenos\Notifynder\Models\Notification::byStack(1)->get();
+        $notifications = \Boparaiamrit\Notifynder\Models\Notification::byStack(1)->get();
 
         foreach ($notifications as $notification) {
             $this->assertEquals($text, $notification->text);

@@ -1,9 +1,9 @@
 <?php
 
-namespace Fenos\Notifynder\Contracts;
+namespace Boparaiamrit\Notifynder\Contracts;
 
-use Fenos\Notifynder\Exceptions\NotificationLanguageNotFoundException;
-use Fenos\Notifynder\Exceptions\NotificationTranslationNotFoundException;
+use Boparaiamrit\Notifynder\Exceptions\NotificationLanguageNotFoundException;
+use Boparaiamrit\Notifynder\Exceptions\NotificationTranslationNotFoundException;
 
 /**
  * Class NotifynderTranslator.

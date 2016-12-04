@@ -1,6 +1,6 @@
 <?php
 
-namespace Fenos\Notifynder\Contracts;
+namespace Boparaiamrit\Notifynder\Contracts;
 
 /**
  * Class NotificationGroupCategoryRepository.

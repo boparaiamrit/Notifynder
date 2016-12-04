@@ -1,10 +1,10 @@
 <?php
 
-use Fenos\Notifynder\Builder\NotifynderBuilder;
-use Fenos\Notifynder\Handler\NotifynderEvent;
-use Fenos\Notifynder\Handler\NotifynderHandler;
-use Fenos\Notifynder\NotifynderManager;
-use Fenos\Tests\Models\User;
+use Boparaiamrit\Notifynder\Builder\NotifynderBuilder;
+use Boparaiamrit\Notifynder\Handler\NotifynderEvent;
+use Boparaiamrit\Notifynder\Handler\NotifynderHandler;
+use Boparaiamrit\Notifynder\NotifynderManager;
+use Boparaiamrit\Tests\Models\User;
 use Illuminate\Contracts\Events\Dispatcher;
 
 /**
@@ -77,7 +77,7 @@ class NotifynderHandlerTest extends TestCaseDB
     {
         $this->dispatcher->fire('notify@userActivated', 'activation');
 
-        $notification = \Fenos\Notifynder\Models\Notification::all();
+        $notification = \Boparaiamrit\Notifynder\Models\Notification::all();
 
         $this->assertCount(1, $notification);
     }
@@ -87,7 +87,7 @@ class NotifynderHandlerTest extends TestCaseDB
     {
         $this->dispatcher->fire('notify@userMultiple', 'activation');
 
-        $notification = \Fenos\Notifynder\Models\Notification::all();
+        $notification = \Boparaiamrit\Notifynder\Models\Notification::all();
 
         $this->assertCount(2, $notification);
     }
@@ -100,7 +100,7 @@ class NotifynderHandlerTest extends TestCaseDB
             'confirmation'  => 'notify@userMultiple',
         ]);
 
-        $notification = \Fenos\Notifynder\Models\Notification::all();
+        $notification = \Boparaiamrit\Notifynder\Models\Notification::all();
 
         $this->assertCount(3, $notification);
     }
@@ -147,7 +147,7 @@ class NotifyUserTest extends NotifynderHandler
      * @param NotifynderEvent $event
      * @param NotifynderManager      $notifynder
      * @return mixed
-     * @throws \Fenos\Notifynder\Exceptions\NotificationBuilderException
+     * @throws \Boparaiamrit\Notifynder\Exceptions\NotificationBuilderException
      */
     public function userActivated(NotifynderEvent $event, NotifynderManager $notifynder)
     {

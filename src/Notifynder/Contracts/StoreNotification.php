@@ -1,8 +1,8 @@
 <?php
 
-namespace Fenos\Notifynder\Contracts;
+namespace Boparaiamrit\Notifynder\Contracts;
 
-use Fenos\Notifynder\Models\Notification;
+use Boparaiamrit\Notifynder\Models\Notification;
 
 /**
  * Class NotificationRepository.

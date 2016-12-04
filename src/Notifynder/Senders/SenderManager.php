@@ -1,13 +1,13 @@
 <?php
 
-namespace Fenos\Notifynder\Senders;
+namespace Boparaiamrit\Notifynder\Senders;
 
 use BadMethodCallException;
 use Closure;
-use Fenos\Notifynder\Contracts\DefaultSender;
-use Fenos\Notifynder\Contracts\NotifynderSender;
-use Fenos\Notifynder\Contracts\Sender;
-use Fenos\Notifynder\Contracts\StoreNotification;
+use Boparaiamrit\Notifynder\Contracts\DefaultSender;
+use Boparaiamrit\Notifynder\Contracts\NotifynderSender;
+use Boparaiamrit\Notifynder\Contracts\Sender;
+use Boparaiamrit\Notifynder\Contracts\StoreNotification;
 use Illuminate\Contracts\Container\Container;
 use LogicException;
 

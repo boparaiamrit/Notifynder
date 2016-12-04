@@ -1,9 +1,9 @@
 <?php
 
-namespace Fenos\Notifynder;
+namespace Boparaiamrit\Notifynder;
 
 use Closure;
-use Fenos\Notifynder\Builder\NotifynderBuilder;
+use Boparaiamrit\Notifynder\Builder\NotifynderBuilder;
 
 /**
  * Class Notifynder.

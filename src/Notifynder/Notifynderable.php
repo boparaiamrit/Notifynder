@@ -1,6 +1,6 @@
 <?php
 
-namespace Fenos\Notifynder;
+namespace Boparaiamrit\Notifynder;
 
 use Closure;
 
@@ -11,14 +11,14 @@ use Closure;
  * that want to be notified, it will set relations
  * and nice short cut for the management of notifications
  */
-trait Notifable
+trait Notifynderable
 {
     /**
      * Notification Relation.
      *
      * @return mixed
      */
-    public function notifications()
+    public function allNotifications()
     {
         // check if on the configurations file there is the option
         // polymorphic set to true, if so Notifynder will work
@@ -142,7 +142,7 @@ trait Notifable
     }
 
     /**
-     * @return \Fenos\Notifynder\NotifynderManager
+     * @return \Boparaiamrit\Notifynder\NotifynderManager
      */
     protected function notifynderInstance()
     {

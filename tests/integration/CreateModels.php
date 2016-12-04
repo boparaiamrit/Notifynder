@@ -1,6 +1,6 @@
 <?php
 
-use Fenos\Notifynder\Models\Notification;
+use Boparaiamrit\Notifynder\Models\Notification;
 use Laracasts\TestDummy\Factory;
 
 trait CreateModels
@@ -13,7 +13,7 @@ trait CreateModels
      */
     protected function createCategory(array $data = [])
     {
-        return Factory::create('Fenos\Notifynder\Models\NotificationCategory', $data);
+        return Factory::create('Boparaiamrit\Notifynder\Models\NotificationCategory', $data);
     }
 
     /**
@@ -24,7 +24,7 @@ trait CreateModels
      */
     protected function createGroup(array $data = [])
     {
-        return Factory::create('Fenos\Notifynder\Models\NotificationGroup', $data);
+        return Factory::create('Boparaiamrit\Notifynder\Models\NotificationGroup', $data);
     }
 
     /**
@@ -62,6 +62,6 @@ trait CreateModels
      */
     protected function createUser(array $data = [])
     {
-        return Factory::create('Fenos\Tests\Models\User', $data);
+        return Factory::create('Boparaiamrit\Tests\Models\User', $data);
     }
 }

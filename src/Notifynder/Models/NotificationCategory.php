@@ -1,8 +1,8 @@
 <?php
 
-namespace Fenos\Notifynder\Models;
+namespace Boparaiamrit\Notifynder\Models;
 
-use Illuminate\Database\Eloquent\Model;
+use Jenssegers\Mongodb\Eloquent\Model;
 
 /**
  * Class NotificationCategory.
@@ -16,7 +16,7 @@ class NotificationCategory extends Model
     /**
      * @var string
      */
-    protected $table = 'notification_categories';
+    protected $collection = 'notification_categories';
 
     /**
      * @var array
@@ -35,7 +35,7 @@ class NotificationCategory extends Model
      */
     public function notifications()
     {
-        return $this->hasMany('Fenos\Notifynder\Models\Notification', 'category_id');
+        return $this->hasMany('Boparaiamrit\Notifynder\Models\Notification', 'category_id');
     }
 
     /**
@@ -46,7 +46,7 @@ class NotificationCategory extends Model
     public function categories()
     {
         return $this->belongsToMany(
-            'Fenos\Notifynder\Models\NotificationGroup',
+            'Boparaiamrit\Notifynder\Models\NotificationGroup',
             'notifications_categories_in_groups',
             'category_id',
             'group_id'

@@ -1,10 +1,10 @@
 <?php
 
-namespace Fenos\Notifynder\Models;
+namespace Boparaiamrit\Notifynder\Models;
 
-use Fenos\Notifynder\Contracts\NotifynderTranslator;
-use Fenos\Notifynder\Exceptions\NotificationTranslationNotFoundException;
-use Fenos\Notifynder\Parsers\NotifynderParser;
+use Boparaiamrit\Notifynder\Contracts\NotifynderTranslator;
+use Boparaiamrit\Notifynder\Exceptions\NotificationTranslationNotFoundException;
+use Boparaiamrit\Notifynder\Parsers\NotifynderParser;
 use Illuminate\Database\Eloquent\Collection;
 
 /**

@@ -1,6 +1,6 @@
 <?php
 
-namespace Fenos\Notifynder\Exceptions;
+namespace Boparaiamrit\Notifynder\Exceptions;
 
 use Exception;
 

@@ -1,8 +1,8 @@
 <?php
 
-namespace Fenos\Notifynder\Contracts;
+namespace Boparaiamrit\Notifynder\Contracts;
 
-use Fenos\Notifynder\Exceptions\CategoryNotFoundException;
+use Boparaiamrit\Notifynder\Exceptions\CategoryNotFoundException;
 
 /**
  * Class CategoryManager.
@@ -45,7 +45,7 @@ interface NotifynderCategory
      *
      * @param $name
      * @param $text
-     * @return \Fenos\Notifynder\Models\NotificationCategory
+     * @return \Boparaiamrit\Notifynder\Models\NotificationCategory
      */
     public function add($name, $text);
 

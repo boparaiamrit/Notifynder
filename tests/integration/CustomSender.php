@@ -1,7 +1,7 @@
 <?php
 
-use Fenos\Notifynder\Contracts\NotifynderSender;
-use Fenos\Notifynder\Contracts\Sender;
+use Boparaiamrit\Notifynder\Contracts\NotifynderSender;
+use Boparaiamrit\Notifynder\Contracts\Sender;
 
 /**
  * Class CustomSender.
@@ -14,15 +14,15 @@ class CustomDefaultSender implements Sender
     protected $notifications;
 
     /**
-     * @var \Fenos\Notifynder\NotifynderManager
+     * @var \Boparaiamrit\Notifynder\NotifynderManager
      */
     private $notifynder;
 
     /**
      * @param array                        $notifications
-     * @param \Fenos\Notifynder\NotifynderManager $notifynder
+     * @param \Boparaiamrit\Notifynder\NotifynderManager $notifynder
      */
-    public function __construct(array $notifications, \Fenos\Notifynder\NotifynderManager $notifynder)
+    public function __construct(array $notifications, \Boparaiamrit\Notifynder\NotifynderManager $notifynder)
     {
         $this->notifications = $notifications;
         $this->notifynder = $notifynder;
