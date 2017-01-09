@@ -2,8 +2,8 @@
 
 namespace Boparaiamrit\Notifynder;
 
-use Closure;
 use Boparaiamrit\Notifynder\Builder\NotifynderBuilder;
+use Closure;
 
 /**
  * Class Notifynder.
@@ -22,6 +22,7 @@ interface Notifynder
      * notification.
      *
      * @param $name
+     *
      * @return $this
      */
     public function category($name);
@@ -31,6 +32,7 @@ interface Notifynder
      * used Polymorphically.
      *
      * @param $name
+     *
      * @return $this
      */
     public function entity($name);
@@ -40,6 +42,7 @@ interface Notifynder
      *
      * @param $name
      * @param $text
+     *
      * @return static
      */
     public function addCategory($name, $text);
@@ -49,6 +52,7 @@ interface Notifynder
      *
      * @param  array $updates
      * @param        $categoryId
+     *
      * @return mixed
      */
     public function updateCategory(array $updates, $categoryId);
@@ -58,6 +62,7 @@ interface Notifynder
      * Both multiple and single.
      *
      * @param  array $info
+     *
      * @return mixed
      */
     public function send($info = []);
@@ -67,6 +72,7 @@ interface Notifynder
      * even if the queue is enabled.
      *
      * @param  array $info
+     *
      * @return mixed
      */
     public function sendNow($info = []);
@@ -75,6 +81,7 @@ interface Notifynder
      * Send One notification.
      *
      * @param  array $info
+     *
      * @return mixed
      */
     public function sendOne($info = []);
@@ -82,7 +89,8 @@ interface Notifynder
     /**
      * Send multiple notifications.
      *
-     * @param  array                $info
+     * @param  array $info
+     *
      * @return Senders\SendMultiple
      */
     public function sendMultiple($info = []);
@@ -92,6 +100,7 @@ interface Notifynder
      *
      * @param $groupName
      * @param $info
+     *
      * @return mixed
      */
     public function sendGroup($groupName, $info = []);
@@ -100,6 +109,7 @@ interface Notifynder
      * Read one notification.
      *
      * @param $notificationId
+     *
      * @return bool|Models\Notification
      */
     public function readOne($notificationId);
@@ -111,6 +121,7 @@ interface Notifynder
      * @param         $toId
      * @param         $numbers
      * @param  string $order
+     *
      * @return mixed
      */
     public function readLimit($toId, $numbers, $order = 'ASC');
@@ -120,6 +131,7 @@ interface Notifynder
      * entity.
      *
      * @param $toId
+     *
      * @return int
      */
     public function readAll($toId);
@@ -128,6 +140,7 @@ interface Notifynder
      * Delete a single notification.
      *
      * @param $notificationId
+     *
      * @return bool
      */
     public function delete($notificationId);
@@ -139,6 +152,7 @@ interface Notifynder
      * @param         $toId
      * @param         $number
      * @param  string $order
+     *
      * @return mixed
      */
     public function deleteLimit($toId, $number, $order = 'ASC');
@@ -148,6 +162,7 @@ interface Notifynder
      * of the the given entity.
      *
      * @param $toId
+     *
      * @return bool
      */
     public function deleteAll($toId);
@@ -158,6 +173,7 @@ interface Notifynder
      *
      * @param $categoryName string
      * @param $expired Bool
+     *
      * @return bool
      */
     public function deleteByCategory($categoryName, $expired = false);
@@ -171,6 +187,7 @@ interface Notifynder
      * @param  bool   $paginate
      * @param  string $order
      * @param Closure $filterScope
+     *
      * @return mixed
      */
     public function getNotRead($toId, $limit = null, $paginate = false, $order = 'desc', Closure $filterScope = null);
@@ -184,6 +201,7 @@ interface Notifynder
      * @param  bool   $paginate
      * @param  string $order
      * @param Closure $filterScope
+     *
      * @return mixed
      */
     public function getAll($toId, $limit = null, $paginate = false, $order = 'desc', Closure $filterScope = null);
@@ -194,6 +212,7 @@ interface Notifynder
      *
      * @param         $toId
      * @param Closure $filterScope
+     *
      * @return mixed
      */
     public function countNotRead($toId, Closure $filterScope = null);
@@ -202,6 +221,7 @@ interface Notifynder
      * Find Notification by ID.
      *
      * @param $notificationId
+     *
      * @return \Illuminate\Database\Eloquent\Collection|\Illuminate\Database\Eloquent\Model|static
      */
     public function findNotificationById($notificationId);
@@ -214,6 +234,7 @@ interface Notifynder
      * @param         $toId
      * @param null    $category
      * @param Closure $filterScope
+     *
      * @return mixed
      */
     public function getLastNotification($toId, $category = null, Closure $filterScope = null);
@@ -224,6 +245,7 @@ interface Notifynder
      *
      * @param $groupName
      * @param $categoryName
+     *
      * @return mixed
      */
     public function addCategoryToGroupByName($groupName, $categoryName);
@@ -234,6 +256,7 @@ interface Notifynder
      *
      * @param $groupId
      * @param $categoryId
+     *
      * @return mixed
      */
     public function addCategoryToGroupById($groupId, $categoryId);
@@ -254,6 +277,7 @@ interface Notifynder
      * @param  string     $key
      * @param  string     $categoryName
      * @param  mixed|null $values
+     *
      * @return mixed|null
      */
     public function fire($key, $categoryName, $values = []);
@@ -263,6 +287,7 @@ interface Notifynder
      *
      * @param        $data
      * @param  array $delegation
+     *
      * @return mixed
      */
     public function delegate(array $delegation, $data = []);
@@ -286,6 +311,7 @@ interface Notifynder
      *
      * @param           $name
      * @param  callable $registrar
+     *
      * @return $this
      */
     public function extend($name, $registrar);
@@ -301,6 +327,7 @@ interface Notifynder
      * Get the categoriesContainer property.
      *
      * @param $name
+     *
      * @return array
      */
     public function getCategoriesContainer($name);
@@ -314,6 +341,7 @@ interface Notifynder
      * it will be like $notifynder->sendCustom().
      *
      * @param $customSenderName
+     *
      * @return $this
      */
     public function dispatchWith($customSenderName);

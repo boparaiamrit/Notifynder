@@ -12,6 +12,7 @@ interface NotifynderGroupCategoryDB
      *
      * @param  $groupId
      * @param  $categoryId
+     *
      * @return \Illuminate\Database\Eloquent\Collection|\Illuminate\Database\Eloquent\Model|static
      */
     public function addCategoryToGroupById($groupId, $categoryId);
@@ -22,6 +23,7 @@ interface NotifynderGroupCategoryDB
      *
      * @param $groupName
      * @param $categoryName
+     *
      * @return mixed
      */
     public function addCategoryToGroupByName($groupName, $categoryName);
@@ -32,6 +34,7 @@ interface NotifynderGroupCategoryDB
      *
      * @param $groupName
      * @param $names
+     *
      * @return mixed
      */
     public function addMultipleCategoriesToGroup($groupName, array $names);

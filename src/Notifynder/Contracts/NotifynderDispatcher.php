@@ -14,9 +14,10 @@ interface NotifynderDispatcher
      * trigger the listener method bound with.
      *
      * @param  Notifynder $notifynder
-     * @param  string            $eventName
-     * @param  string            $categoryName
-     * @param  mixed|null        $values
+     * @param  string     $eventName
+     * @param  string     $categoryName
+     * @param  mixed|null $values
+     *
      * @return mixed|null
      */
     public function fire(Notifynder $notifynder, $eventName, $categoryName = null, $values = []);
@@ -25,8 +26,9 @@ interface NotifynderDispatcher
      * Delegate events to categories.
      *
      * @param  Notifynder $notifynder
-     * @param  array             $data
-     * @param  array             $events
+     * @param  array      $data
+     * @param  array      $events
+     *
      * @return mixed
      */
     public function delegate(Notifynder $notifynder, $data, array $events);
@@ -44,6 +46,7 @@ interface NotifynderDispatcher
      * (extended method).
      *
      * @param $customMethod
+     *
      * @return $this
      */
     public function sendWith($customMethod);
@@ -53,6 +56,7 @@ interface NotifynderDispatcher
      * to send.
      *
      * @param $notificationsResult
+     *
      * @return bool
      */
     public function hasNotificationToSend($notificationsResult);

@@ -44,11 +44,12 @@ class Compiler
      * Get the path to the compiled version of a view.
      *
      * @param  string $filename
+     *
      * @return string
      */
     public function getCompiledPath($filename)
     {
-        return $this->cachePath().'/'.md5($filename);
+        return $this->cachePath() . '/' . md5($filename);
     }
 
     /**
@@ -63,7 +64,7 @@ class Compiler
         // If the compiled file doesn't exist we will indicate that the view is expired
         // so that it can be re-compiled. Else, we will verify the last modification
         // of the views is less than the modification times of the compiled views.
-        if (! $this->cachePath() || ! $this->files->exists($compiled)) {
+        if (!$this->cachePath() || !$this->files->exists($compiled)) {
             return true;
         }
 
@@ -85,7 +86,8 @@ class Compiler
     /**
      * Cache the file in json format.
      *
-     * @param  array    $contents
+     * @param  array $contents
+     *
      * @return bool|int
      */
     public function cacheFile(array $contents)

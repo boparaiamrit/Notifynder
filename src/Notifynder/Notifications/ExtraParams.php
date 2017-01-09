@@ -3,9 +3,9 @@
 namespace Boparaiamrit\Notifynder\Notifications;
 
 use ArrayAccess;
-use JsonSerializable;
 use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Contracts\Support\Jsonable;
+use JsonSerializable;
 use stdClass;
 
 /**
@@ -28,14 +28,15 @@ class ExtraParams implements ArrayAccess, Arrayable, Jsonable, JsonSerializable
         if ($this->isJson($extraParams)) {
             $this->extraParams = json_decode($extraParams, true);
         } else {
-            $this->extraParams = (array) $extraParams;
+            $this->extraParams = (array)$extraParams;
         }
     }
 
     /**
      * Convert the model instance to JSON.
      *
-     * @param  int  $options
+     * @param  int $options
+     *
      * @return string
      */
     public function toJson($options = 0)
@@ -87,6 +88,7 @@ class ExtraParams implements ArrayAccess, Arrayable, Jsonable, JsonSerializable
      * exists.
      *
      * @param $name
+     *
      * @return bool
      */
     public function has($name)
@@ -100,6 +102,7 @@ class ExtraParams implements ArrayAccess, Arrayable, Jsonable, JsonSerializable
      * is utilized for reading data from inaccessible members.
      *
      * @param $name string
+     *
      * @return mixed
      */
     public function __get($name)
@@ -115,6 +118,7 @@ class ExtraParams implements ArrayAccess, Arrayable, Jsonable, JsonSerializable
      * Whether a offset exists.
      *
      * @param mixed $offset
+     *
      * @return bool
      */
     public function offsetExists($offset)
@@ -124,6 +128,7 @@ class ExtraParams implements ArrayAccess, Arrayable, Jsonable, JsonSerializable
 
     /**
      * @param mixed $offset
+     *
      * @return mixed Can return all value types.
      */
     public function offsetGet($offset)
@@ -153,11 +158,12 @@ class ExtraParams implements ArrayAccess, Arrayable, Jsonable, JsonSerializable
      * is a json string.
      *
      * @param $value
+     *
      * @return bool
      */
     public function isJson($value)
     {
-        if (! is_string($value)) {
+        if (!is_string($value)) {
             return false;
         }
 

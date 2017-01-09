@@ -30,7 +30,8 @@ class CreateGroup extends Command
     /**
      * Create a new command instance.
      *
-     * @param  NotifynderGroup                    $notifynderGroup
+     * @param  NotifynderGroup $notifynderGroup
+     *
      * @return \Boparaiamrit\Notifynder\Artisan\CreateGroup
      */
     public function __construct(NotifynderGroup $notifynderGroup)
@@ -48,7 +49,7 @@ class CreateGroup extends Command
     {
         $nameGroup = $this->argument('name');
 
-        if (! $this->notifynderGroup->addGroup($nameGroup)) {
+        if (!$this->notifynderGroup->addGroup($nameGroup)) {
             $this->error('The name must be a string with dots as namespaces');
 
             return false;

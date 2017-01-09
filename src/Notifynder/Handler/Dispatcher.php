@@ -42,10 +42,11 @@ class Dispatcher implements NotifynderDispatcher
      * It fire the event associated to the passed key,
      * trigger the listener method bound with.
      *
-     * @param  Notifynder        $notifynder
-     * @param  string            $eventName
-     * @param  string            $categoryName
-     * @param  mixed|null        $values
+     * @param  Notifynder $notifynder
+     * @param  string     $eventName
+     * @param  string     $categoryName
+     * @param  mixed|null $values
+     *
      * @return mixed|null
      */
     public function fire(Notifynder $notifynder, $eventName, $categoryName = null, $values = [])
@@ -78,9 +79,10 @@ class Dispatcher implements NotifynderDispatcher
     /**
      * Delegate events to categories.
      *
-     * @param  Notifynder        $notifynder
-     * @param  array             $data
-     * @param  array             $events
+     * @param  Notifynder $notifynder
+     * @param  array      $data
+     * @param  array      $events
+     *
      * @return mixed
      */
     public function delegate(Notifynder $notifynder, $data, array $events)
@@ -96,6 +98,7 @@ class Dispatcher implements NotifynderDispatcher
      * (extended method).
      *
      * @param $customMethod
+     *
      * @return $this
      */
     public function sendWith($customMethod)
@@ -126,24 +129,26 @@ class Dispatcher implements NotifynderDispatcher
      * to send.
      *
      * @param $notificationsResult
+     *
      * @return bool
      */
     public function hasNotificationToSend($notificationsResult)
     {
         return is_array($notificationsResult)
-                and count($notificationsResult) > 0
-                and $notificationsResult[0] !== false
-                and count($notificationsResult[0]) > 0;
+            and count($notificationsResult) > 0
+            and $notificationsResult[0] !== false
+            and count($notificationsResult[0]) > 0;
     }
 
     /**
      * Get Event name.
      *
      * @param $eventName
+     *
      * @return string
      */
     protected function generateEventName($eventName)
     {
-        return static::$defaultWildcard.'.'.str_replace('@', '.', $eventName);
+        return static::$defaultWildcard . '.' . str_replace('@', '.', $eventName);
     }
 }

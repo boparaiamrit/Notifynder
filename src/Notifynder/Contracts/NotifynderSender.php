@@ -2,8 +2,8 @@
 
 namespace Boparaiamrit\Notifynder\Contracts;
 
-use Boparaiamrit\Notifynder\Senders\SendOne;
 use Boparaiamrit\Notifynder\Senders\SendMultiple;
+use Boparaiamrit\Notifynder\Senders\SendOne;
 
 /**
  * Class SenderManager.
@@ -15,6 +15,7 @@ interface NotifynderSender
      *
      * @param  array $info
      * @param  null  $category
+     *
      * @return mixed
      */
     public function send($info, $category = null);
@@ -24,6 +25,7 @@ interface NotifynderSender
      *
      * @param  array $info
      * @param        $category
+     *
      * @return mixed
      */
     public function sendNow($info, $category = null);
@@ -34,6 +36,7 @@ interface NotifynderSender
      *
      * @param $info
      * @param $category
+     *
      * @return SendOne
      */
     public function sendOne($info, $category = null);
@@ -43,6 +46,7 @@ interface NotifynderSender
      * older version.
      *
      * @param $info
+     *
      * @return SendMultiple
      */
     public function sendMultiple($info);
@@ -53,6 +57,7 @@ interface NotifynderSender
      *
      * @param        $groupName
      * @param  array $info
+     *
      * @return mixed
      */
     public function sendGroup($groupName, $info = []);
@@ -63,6 +68,7 @@ interface NotifynderSender
      *
      * @param           $name
      * @param  callable $extendSender
+     *
      * @return $this
      */
     public function extend($name, $extendSender);
@@ -72,6 +78,7 @@ interface NotifynderSender
      *
      * @param $customMethod
      * @param $notification
+     *
      * @return mixed
      */
     public function customSender($customMethod, $notification);

@@ -30,7 +30,8 @@ class CreateCategory extends Command
     /**
      * Create a new command instance.
      *
-     * @param  NotifynderCategory                    $notifynderCategory
+     * @param  NotifynderCategory $notifynderCategory
+     *
      * @return \Boparaiamrit\Notifynder\Artisan\CreateCategory
      */
     public function __construct(NotifynderCategory $notifynderCategory)
@@ -52,7 +53,7 @@ class CreateCategory extends Command
 
         $createCategory = $this->notifynderCategory->add($name, $text);
 
-        if (! $createCategory) {
+        if (!$createCategory) {
             $this->error('The category has been not created');
 
             return false;

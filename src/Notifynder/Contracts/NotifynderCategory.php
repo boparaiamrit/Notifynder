@@ -16,6 +16,7 @@ interface NotifynderCategory
      * Find a category by name.
      *
      * @param $name
+     *
      * @throws CategoryNotFoundException
      * @return mixed
      */
@@ -26,6 +27,7 @@ interface NotifynderCategory
      * pass the name as an array.
      *
      * @param $name
+     *
      * @throws CategoryNotFoundException
      * @return mixed
      */
@@ -35,6 +37,7 @@ interface NotifynderCategory
      * Find a category by id.
      *
      * @param $categoryId
+     *
      * @throws CategoryNotFoundException
      * @return mixed
      */
@@ -45,6 +48,7 @@ interface NotifynderCategory
      *
      * @param $name
      * @param $text
+     *
      * @return \Boparaiamrit\Notifynder\Models\NotificationCategory
      */
     public function add($name, $text);
@@ -53,6 +57,7 @@ interface NotifynderCategory
      * Delete category by ID.
      *
      * @param $categoryId
+     *
      * @return mixed
      */
     public function delete($categoryId);
@@ -61,6 +66,7 @@ interface NotifynderCategory
      * Delete category by name.
      *
      * @param $name
+     *
      * @return mixed
      */
     public function deleteByName($name);
@@ -70,6 +76,7 @@ interface NotifynderCategory
      *
      * @param  array $data
      * @param        $categoryId
+     *
      * @return mixed
      */
     public function update(array $data, $categoryId);

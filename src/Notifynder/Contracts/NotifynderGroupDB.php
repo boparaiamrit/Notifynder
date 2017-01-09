@@ -11,6 +11,7 @@ interface NotifynderGroupDB
      * Find a group by ID.
      *
      * @param $groupId
+     *
      * @return \Illuminate\Database\Eloquent\Collection|\Illuminate\Database\Eloquent\Model|static
      */
     public function find($groupId);
@@ -19,6 +20,7 @@ interface NotifynderGroupDB
      * Find a group by name.
      *
      * @param $name
+     *
      * @return mixed
      */
     public function findByName($name);
@@ -27,6 +29,7 @@ interface NotifynderGroupDB
      * Create a new group.
      *
      * @param $name
+     *
      * @return \Illuminate\Database\Eloquent\Model|static
      */
     public function create($name);
@@ -35,6 +38,7 @@ interface NotifynderGroupDB
      * Delete a group.
      *
      * @param $groupId
+     *
      * @return mixed
      */
     public function delete($groupId);

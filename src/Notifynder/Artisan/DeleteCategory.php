@@ -30,7 +30,8 @@ class DeleteCategory extends Command
     /**
      * Create a new command instance.
      *
-     * @param  NotifynderCategory                       $notifynderCategory
+     * @param  NotifynderCategory $notifynderCategory
+     *
      * @return \Boparaiamrit\Notifynder\Artisan\DeleteCategory
      */
     public function __construct(NotifynderCategory $notifynderCategory)
@@ -54,7 +55,7 @@ class DeleteCategory extends Command
             $delete = $this->notifynderCategory->deleteByName($identifier);
         }
 
-        if (! $delete) {
+        if (!$delete) {
             $this->error('Category Not found');
 
             return false;

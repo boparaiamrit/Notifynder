@@ -31,15 +31,16 @@ class CategoryManager implements NotifynderCategory
      * Find a category by name.
      *
      * @param $name
+     *
      * @throws CategoryNotFoundException
      * @return mixed
      */
     public function findByName($name)
     {
         $category = $this->categoryRepo->findByName($name);
-		
+
         if (is_null($category)) {
-        	dd(debug_print_backtrace());
+            dd(debug_print_backtrace());
             $error = 'Category Not Found';
             throw new CategoryNotFoundException($error);
         }
@@ -52,6 +53,7 @@ class CategoryManager implements NotifynderCategory
      * pass the name as an array.
      *
      * @param $name
+     *
      * @throws CategoryNotFoundException
      * @return mixed
      */
@@ -71,6 +73,7 @@ class CategoryManager implements NotifynderCategory
      * Find a category by id.
      *
      * @param $categoryId
+     *
      * @throws CategoryNotFoundException
      * @return mixed
      */
@@ -91,6 +94,7 @@ class CategoryManager implements NotifynderCategory
      *
      * @param  array                                         $name
      * @param                                                $text
+     *
      * @return \Boparaiamrit\Notifynder\Models\NotificationCategory
      */
     public function add($name, $text)
@@ -102,6 +106,7 @@ class CategoryManager implements NotifynderCategory
      * Delete category by ID.
      *
      * @param $categoryId
+     *
      * @return mixed
      */
     public function delete($categoryId)
@@ -113,6 +118,7 @@ class CategoryManager implements NotifynderCategory
      * Delete category by name.
      *
      * @param $name
+     *
      * @return mixed
      */
     public function deleteByName($name)
@@ -125,6 +131,7 @@ class CategoryManager implements NotifynderCategory
      *
      * @param  array $data
      * @param        $categoryId
+     *
      * @return mixed
      */
     public function update(array $data, $categoryId)

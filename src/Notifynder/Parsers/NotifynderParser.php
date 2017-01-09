@@ -28,6 +28,7 @@ class NotifynderParser
      * values.
      *
      * @param $item
+     *
      * @return string
      * @throws \Boparaiamrit\Notifynder\Exceptions\ExtraParamsException
      */
@@ -74,6 +75,7 @@ class NotifynderParser
      * and return an array of it.
      *
      * @param $body
+     *
      * @return mixed
      */
     protected function getValues($body)
@@ -89,6 +91,7 @@ class NotifynderParser
      * to array type.
      *
      * @param $extra
+     *
      * @return array|mixed
      */
     protected function extraToArray($extra)
@@ -110,11 +113,12 @@ class NotifynderParser
      * @param $body
      * @param $replacer
      * @param $valueMatch
+     *
      * @return mixed
      */
     protected function replaceBody($body, $valueMatch, $replacer)
     {
-        $body = str_replace('{'.$replacer.'}', $valueMatch, $body);
+        $body = str_replace('{' . $replacer . '}', $valueMatch, $body);
 
         return $body;
     }
@@ -123,11 +127,12 @@ class NotifynderParser
      * Check if is a json string.
      *
      * @param $value
+     *
      * @return bool
      */
     protected function isJson($value)
     {
-        if (! is_string($value)) {
+        if (!is_string($value)) {
             return false;
         }
 
@@ -140,8 +145,9 @@ class NotifynderParser
      * Get a value by dot-key of an array, object or mix of both.
      *
      * @param array|object $object
-     * @param string $key
-     * @param null $default
+     * @param string       $key
+     * @param null         $default
+     *
      * @return mixed
      */
     protected function mixedGet($object, $key, $default = null)
@@ -153,9 +159,9 @@ class NotifynderParser
         foreach (explode('.', $key) as $segment) {
             if (is_object($object) && isset($object->{$segment})) {
                 $object = $object->{$segment};
-            } elseif (is_object($object) && method_exists($object, '__get') && ! is_null($object->__get($segment))) {
+            } elseif (is_object($object) && method_exists($object, '__get') && !is_null($object->__get($segment))) {
                 $object = $object->__get($segment);
-            } elseif (is_object($object) && method_exists($object, 'getAttribute') && ! is_null($object->getAttribute($segment))) {
+            } elseif (is_object($object) && method_exists($object, 'getAttribute') && !is_null($object->getAttribute($segment))) {
                 $object = $object->getAttribute($segment);
             } elseif (is_array($object) && array_key_exists($segment, $object)) {
                 $object = array_get($object, $segment, $default);

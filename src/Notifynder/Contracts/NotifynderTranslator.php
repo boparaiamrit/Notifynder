@@ -28,6 +28,7 @@ interface NotifynderTranslator
      *
      * @param $language
      * @param $nameCategory
+     *
      * @return mixed
      * @throws NotificationLanguageNotFoundException
      * @throws NotificationTranslationNotFoundException
@@ -38,6 +39,7 @@ interface NotifynderTranslator
      * Get selected language of translations.
      *
      * @param $language
+     *
      * @return mixed
      * @throws NotificationLanguageNotFoundException
      */

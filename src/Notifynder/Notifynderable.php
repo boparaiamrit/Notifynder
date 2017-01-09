@@ -47,6 +47,7 @@ trait Notifynderable
      *
      * @param  int    $numbers
      * @param  string $order
+     *
      * @return mixed
      */
     public function readLimitNotifications($numbers = 10, $order = 'ASC')
@@ -61,6 +62,7 @@ trait Notifynderable
      *
      * @param  int    $numbers
      * @param  string $order
+     *
      * @return mixed
      */
     public function deleteLimitNotifications($numbers = 10, $order = 'ASC')
@@ -89,6 +91,7 @@ trait Notifynderable
      * @param  int|null $paginate
      * @param  string   $order
      * @param Closure   $filterScope
+     *
      * @return mixed
      */
     public function getNotificationsNotRead($limit = null, $paginate = null, $order = 'desc', Closure $filterScope = null)
@@ -105,6 +108,7 @@ trait Notifynderable
      * @param  int|null $paginate
      * @param  string   $order
      * @param Closure   $filterScope
+     *
      * @return mixed
      */
     public function getNotifications($limit = null, $paginate = null, $order = 'desc', Closure $filterScope = null)
@@ -119,6 +123,7 @@ trait Notifynderable
      *
      * @param null    $category
      * @param Closure $filterScope
+     *
      * @return mixed
      */
     public function getLastNotification($category = null, Closure $filterScope = null)
@@ -132,6 +137,7 @@ trait Notifynderable
      * Count Not read notification.
      *
      * @param Closure $filterScope
+     *
      * @return mixed
      */
     public function countNotificationsNotRead(Closure $filterScope = null)

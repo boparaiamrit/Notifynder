@@ -5,8 +5,8 @@ namespace Boparaiamrit\Notifynder\Artisan;
 use Boparaiamrit\Notifynder\Contracts\NotifynderGroup;
 use Boparaiamrit\Notifynder\Parsers\ArtisanOptionsParser;
 use Illuminate\Console\Command;
-use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
+use Symfony\Component\Console\Input\InputOption;
 
 class PushCategoryToGroup extends Command
 {
@@ -37,12 +37,13 @@ class PushCategoryToGroup extends Command
     /**
      * Create a new command instance.
      *
-     * @param  NotifynderGroup                              $notifynderGroup
-     * @param  ArtisanOptionsParser                         $artisanOptionsParser
+     * @param  NotifynderGroup      $notifynderGroup
+     * @param  ArtisanOptionsParser $artisanOptionsParser
+     *
      * @return \Boparaiamrit\Notifynder\Artisan\PushCategoryToGroup
      */
     public function __construct(NotifynderGroup $notifynderGroup,
-        ArtisanOptionsParser $artisanOptionsParser)
+                                ArtisanOptionsParser $artisanOptionsParser)
     {
         parent::__construct();
         $this->notifynderGroup = $notifynderGroup;

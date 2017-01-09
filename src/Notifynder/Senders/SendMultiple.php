@@ -29,6 +29,7 @@ class SendMultiple implements DefaultSender
      * Send multiple notifications.
      *
      * @param  StoreNotification $sender
+     *
      * @return mixed
      */
     public function send(StoreNotification $sender)

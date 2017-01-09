@@ -2,8 +2,8 @@
 
 namespace Boparaiamrit\Notifynder\Contracts;
 
-use Closure;
 use Boparaiamrit\Notifynder\Models\Notification;
+use Closure;
 
 /**
  * Class NotificationRepository.
@@ -14,6 +14,7 @@ interface NotificationDB extends StoreNotification
      * Find notification by id.
      *
      * @param $notificationId
+     *
      * @return \Illuminate\Database\Eloquent\Collection|\Illuminate\Database\Eloquent\Model|static
      */
     public function find($notificationId);
@@ -22,6 +23,7 @@ interface NotificationDB extends StoreNotification
      * Make Read One Notification.
      *
      * @param  Notification $notification
+     *
      * @return bool|Notification
      */
     public function readOne(Notification $notification);
@@ -34,6 +36,7 @@ interface NotificationDB extends StoreNotification
      * @param $entity
      * @param $numbers
      * @param $order
+     *
      * @return int
      */
     public function readLimit($toId, $entity, $numbers, $order);
@@ -43,6 +46,7 @@ interface NotificationDB extends StoreNotification
      *
      * @param $toId
      * @param $entity
+     *
      * @return int
      */
     public function readAll($toId, $entity);
@@ -52,6 +56,7 @@ interface NotificationDB extends StoreNotification
      * of it.
      *
      * @param $notificationId
+     *
      * @return bool
      */
     public function delete($notificationId);
@@ -62,6 +67,7 @@ interface NotificationDB extends StoreNotification
      *
      * @param $toId int
      * @param $entity
+     *
      * @return bool
      */
     public function deleteAll($toId, $entity);
@@ -72,6 +78,7 @@ interface NotificationDB extends StoreNotification
      *
      * @param $categoryName
      * @param $expired Bool
+     *
      * @return bool
      */
     public function deleteByCategory($categoryName, $expired = false);
@@ -85,6 +92,7 @@ interface NotificationDB extends StoreNotification
      * @param $entity
      * @param $number     int
      * @param $order      string
+     *
      * @return int
      * @throws \Exception
      */
@@ -101,6 +109,7 @@ interface NotificationDB extends StoreNotification
      * @param  int|null $paginate
      * @param  string   $orderDate
      * @param Closure   $filterScope
+     *
      * @return mixed
      */
     public function getNotRead(
@@ -124,6 +133,7 @@ interface NotificationDB extends StoreNotification
      * @param  int|null $paginate
      * @param  string   $orderDate
      * @param Closure   $filterScope
+     *
      * @return mixed
      */
     public function getAll(
@@ -142,6 +152,7 @@ interface NotificationDB extends StoreNotification
      * @param         $toId
      * @param         $entity
      * @param Closure $filterScope
+     *
      * @return mixed
      */
     public function countNotRead($toId, $entity, Closure $filterScope = null);
@@ -153,6 +164,7 @@ interface NotificationDB extends StoreNotification
      * @param         $toId
      * @param         $entity
      * @param Closure $filterScope
+     *
      * @return mixed
      */
     public function getLastNotification($toId, $entity, Closure $filterScope = null);
@@ -165,6 +177,7 @@ interface NotificationDB extends StoreNotification
      * @param         $toId
      * @param         $entity
      * @param Closure $filterScope
+     *
      * @return mixed
      */
     public function getLastNotificationByCategory($category, $toId, $entity, Closure $filterScope = null);

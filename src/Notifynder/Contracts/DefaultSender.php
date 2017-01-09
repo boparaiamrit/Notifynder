@@ -15,6 +15,7 @@ interface DefaultSender
      * Send notification.
      *
      * @param  StoreNotification $sender
+     *
      * @return mixed
      */
     public function send(StoreNotification $sender);

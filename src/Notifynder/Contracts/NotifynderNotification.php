@@ -2,8 +2,8 @@
 
 namespace Boparaiamrit\Notifynder\Contracts;
 
-use Closure;
 use Boparaiamrit\Notifynder\Models\Notification as NotificationModel;
+use Closure;
 
 /**
  * Class NotifynderNotification.
@@ -14,6 +14,7 @@ interface NotifynderNotification
      * Set the entity for polymorphic.
      *
      * @param $name
+     *
      * @return $this
      */
     public function entity($name);
@@ -22,6 +23,7 @@ interface NotifynderNotification
      * Find a notification by ID.
      *
      * @param $notificationId
+     *
      * @return NotificationModel|\Illuminate\Database\Eloquent\Model|static
      * @throws \Boparaiamrit\Notifynder\Exceptions\NotificationNotFoundException
      */
@@ -32,6 +34,7 @@ interface NotifynderNotification
      * the ID of it.
      *
      * @param $notificationId
+     *
      * @return bool|\Boparaiamrit\Notifynder\Models\Notification
      */
     public function readOne($notificationId);
@@ -43,6 +46,7 @@ interface NotifynderNotification
      * @param         $toId
      * @param         $numbers
      * @param  string $order
+     *
      * @return mixed
      */
     public function readLimit($toId, $numbers, $order = 'ASC');
@@ -52,6 +56,7 @@ interface NotifynderNotification
      * given entity.
      *
      * @param $toId
+     *
      * @return Number
      */
     public function readAll($toId);
@@ -61,6 +66,7 @@ interface NotifynderNotification
      * of it.
      *
      * @param $notificationId
+     *
      * @return bool
      */
     public function delete($notificationId);
@@ -73,6 +79,7 @@ interface NotifynderNotification
      * @param $entityId
      * @param $number
      * @param $order
+     *
      * @return mixed
      */
     public function deleteLimit($entityId, $number, $order);
@@ -82,6 +89,7 @@ interface NotifynderNotification
      * Entity.
      *
      * @param $entityId
+     *
      * @return bool
      */
     public function deleteAll($entityId);
@@ -92,6 +100,7 @@ interface NotifynderNotification
      *
      * @param $categoryName string
      * @param $expired Bool
+     *
      * @return bool
      */
     public function deleteByCategory($categoryName, $expired = false);
@@ -105,6 +114,7 @@ interface NotifynderNotification
      * @param         $paginate
      * @param  string $orderDate
      * @param Closure $filterScope
+     *
      * @return mixed
      */
     public function getNotRead($toId, $limit, $paginate, $orderDate = 'desc', Closure $filterScope = null);
@@ -117,6 +127,7 @@ interface NotifynderNotification
      * @param         $paginate
      * @param  string $orderDate
      * @param Closure $filterScope
+     *
      * @return mixed
      */
     public function getAll($toId, $limit, $paginate, $orderDate = 'desc', Closure $filterScope = null);
@@ -127,6 +138,7 @@ interface NotifynderNotification
      *
      * @param         $toId
      * @param Closure $filterScope
+     *
      * @return mixed
      */
     public function getLastNotification($toId, Closure $filterScope = null);
@@ -138,6 +150,7 @@ interface NotifynderNotification
      * @param         $category
      * @param         $toId
      * @param Closure $filterScope
+     *
      * @return mixed
      */
     public function getLastNotificationByCategory($category, $toId, Closure $filterScope = null);
@@ -145,7 +158,8 @@ interface NotifynderNotification
     /**
      * Send single notification.
      *
-     * @param  array  $info
+     * @param  array $info
+     *
      * @return static
      */
     public function sendOne(array $info);
@@ -154,6 +168,7 @@ interface NotifynderNotification
      * Send multiple notifications.
      *
      * @param  array $info
+     *
      * @return mixed
      */
     public function sendMultiple(array $info);
@@ -164,6 +179,7 @@ interface NotifynderNotification
      *
      * @param         $toId
      * @param Closure $filterScope
+     *
      * @return mixed
      */
     public function countNotRead($toId, Closure $filterScope = null);

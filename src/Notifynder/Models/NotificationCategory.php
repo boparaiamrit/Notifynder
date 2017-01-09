@@ -7,7 +7,7 @@ use Jenssegers\Mongodb\Eloquent\Model;
 /**
  * Class NotificationCategory.
  *
- * @property int id
+ * @property int    id
  * @property string name
  * @property string text
  */

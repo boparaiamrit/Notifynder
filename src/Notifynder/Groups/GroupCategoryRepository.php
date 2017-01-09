@@ -27,7 +27,7 @@ class GroupCategoryRepository implements NotifynderGroupCategoryDB
      * @param NotificationGroup  $notificationGroup
      */
     public function __construct(NotifynderCategory $notificationCategory,
-                         NotificationGroup $notificationGroup)
+                                NotificationGroup $notificationGroup)
     {
         $this->notificationCategory = $notificationCategory;
         $this->notificationGroup = $notificationGroup;
@@ -38,6 +38,7 @@ class GroupCategoryRepository implements NotifynderGroupCategoryDB
      *
      * @param  $groupId
      * @param  $categoryId
+     *
      * @return \Illuminate\Database\Eloquent\Collection|\Illuminate\Database\Eloquent\Model|static
      */
     public function addCategoryToGroupById($groupId, $categoryId)
@@ -54,6 +55,7 @@ class GroupCategoryRepository implements NotifynderGroupCategoryDB
      *
      * @param $groupName
      * @param $categoryName
+     *
      * @return mixed
      */
     public function addCategoryToGroupByName($groupName, $categoryName)
@@ -73,6 +75,7 @@ class GroupCategoryRepository implements NotifynderGroupCategoryDB
      *
      * @param $groupName
      * @param $names
+     *
      * @return mixed
      */
     public function addMultipleCategoriesToGroup($groupName, array $names)

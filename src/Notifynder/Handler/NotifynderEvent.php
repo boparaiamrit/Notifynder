@@ -49,6 +49,7 @@ class NotifynderEvent implements NotifyListener
      * values.
      *
      * @param $name
+     *
      * @return mixed
      */
     public function get($name)
@@ -68,6 +69,7 @@ class NotifynderEvent implements NotifyListener
 
     /**
      * @param $name
+     *
      * @return mixed
      */
     public function __get($name)

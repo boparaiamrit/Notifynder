@@ -40,6 +40,7 @@ class NotifynderCollection extends Collection
      * another language. It used by collection.
      *
      * @param $language (String)
+     *
      * @return Collection
      */
     public function translate($language)

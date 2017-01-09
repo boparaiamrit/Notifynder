@@ -14,6 +14,7 @@ interface CategoryDB
      * Find By Id.
      *
      * @param $categoryId
+     *
      * @return mixed
      */
     public function find($categoryId);
@@ -22,6 +23,7 @@ interface CategoryDB
      * Find by name.
      *
      * @param $name
+     *
      * @return mixed
      */
     public function findByName($name);
@@ -31,6 +33,7 @@ interface CategoryDB
      * lists of ids.
      *
      * @param $name
+     *
      * @return mixed
      */
     public function findByNames(array $name);
@@ -40,6 +43,7 @@ interface CategoryDB
      *
      * @param  array  $name
      * @param         $text
+     *
      * @return static
      */
     public function add($name, $text);
@@ -48,6 +52,7 @@ interface CategoryDB
      * Delete category by ID.
      *
      * @param $categoryId
+     *
      * @return mixed
      */
     public function delete($categoryId);
@@ -56,6 +61,7 @@ interface CategoryDB
      * Delete category by name.
      *
      * @param $name
+     *
      * @return mixed
      */
     public function deleteByName($name);
@@ -65,6 +71,7 @@ interface CategoryDB
      *
      * @param  array $data
      * @param        $categoryId
+     *
      * @return mixed
      */
     public function update(array $data, $categoryId);

@@ -2,9 +2,9 @@
 
 namespace Boparaiamrit\Notifynder\Senders;
 
+use Boparaiamrit\Notifynder\Contracts\DefaultSender;
 use Boparaiamrit\Notifynder\Contracts\NotifynderCategory;
 use Boparaiamrit\Notifynder\Contracts\NotifynderGroup;
-use Boparaiamrit\Notifynder\Contracts\DefaultSender;
 use Boparaiamrit\Notifynder\Contracts\StoreNotification;
 use Boparaiamrit\Notifynder\NotifynderManager;
 
@@ -40,9 +40,9 @@ class SendGroup implements DefaultSender
      * @param array | \Closure   $info
      */
     public function __construct(NotifynderGroup $notifynderGroup,
-                         NotifynderCategory $notifynderCategory,
-                         $nameGroup,
-                         array $info)
+                                NotifynderCategory $notifynderCategory,
+                                $nameGroup,
+                                array $info)
     {
         $this->info = $info;
         $this->nameGroup = $nameGroup;
@@ -54,6 +54,7 @@ class SendGroup implements DefaultSender
      * Send group notifications.
      *
      * @param  StoreNotification $sender
+     *
      * @return mixed
      */
     public function send(StoreNotification $sender)

@@ -28,6 +28,7 @@ class GroupRepository implements NotifynderGroupDB
      * Find a group by ID.
      *
      * @param $groupId
+     *
      * @return \Illuminate\Database\Eloquent\Collection|\Illuminate\Database\Eloquent\Model|static
      */
     public function find($groupId)
@@ -39,6 +40,7 @@ class GroupRepository implements NotifynderGroupDB
      * Find a group by name.
      *
      * @param $name
+     *
      * @return mixed
      */
     public function findByName($name)
@@ -50,6 +52,7 @@ class GroupRepository implements NotifynderGroupDB
      * Create a new group.
      *
      * @param $name
+     *
      * @return \Illuminate\Database\Eloquent\Model
      */
     public function create($name)
@@ -61,10 +64,11 @@ class GroupRepository implements NotifynderGroupDB
      * Delete a group.
      *
      * @param $groupId
+     *
      * @return mixed
      */
     public function delete($groupId)
     {
-        return  $this->groupModel->where('id', $groupId)->delete();
+        return $this->groupModel->where('id', $groupId)->delete();
     }
 }

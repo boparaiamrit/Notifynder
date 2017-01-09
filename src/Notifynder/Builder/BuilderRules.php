@@ -2,9 +2,9 @@
 
 namespace Boparaiamrit\Notifynder\Builder;
 
+use Carbon\Carbon;
 use Illuminate\Contracts\Config\Repository;
 use InvalidArgumentException;
-use Carbon\Carbon;
 
 /**
  * Class BuilderRules.
@@ -24,11 +24,12 @@ trait BuilderRules
      * Value has to be a string.
      *
      * @param $value
+     *
      * @return bool
      */
     protected function isString($value)
     {
-        if (! is_string($value)) {
+        if (!is_string($value)) {
             throw new InvalidArgumentException('The value Passed is not a string');
         }
 
@@ -39,6 +40,7 @@ trait BuilderRules
      * Value has to be a valid Carbon Instance.
      *
      * @param $value
+     *
      * @return bool | InvalidArgumentException
      */
     protected function isCarbon($value)
@@ -54,11 +56,12 @@ trait BuilderRules
      * Value has to be numeric.
      *
      * @param $value
+     *
      * @return bool
      */
     protected function isNumeric($value)
     {
-        if (! is_numeric($value)) {
+        if (!is_numeric($value)) {
             throw new InvalidArgumentException('The value Passed must be a number');
         }
 
@@ -86,12 +89,13 @@ trait BuilderRules
      * notifications correctly.
      *
      * @param $array
+     *
      * @return bool
      */
     public function hasRequiredFields($array)
     {
         foreach ($this->getRequiredFields() as $field) {
-            if (! array_key_exists($field, $array)) {
+            if (!array_key_exists($field, $array)) {
                 return false;
             }
         }
@@ -103,6 +107,7 @@ trait BuilderRules
      * Check if is a required field.
      *
      * @param $offset
+     *
      * @return bool
      */
     public function isRequiredField($offset)
@@ -115,6 +120,7 @@ trait BuilderRules
      * multidimensional.
      *
      * @param $arr
+     *
      * @return bool
      */
     protected function isReadyArrToFormatInJson(array $arr)
@@ -133,6 +139,7 @@ trait BuilderRules
 
     /**
      * @param array $arr
+     *
      * @return bool
      */
     protected function isAssociativeArr(array $arr)
@@ -145,6 +152,7 @@ trait BuilderRules
      * multidimensional.
      *
      * @param $arr
+     *
      * @return bool
      */
     public function isMultidimensionalArray($arr)

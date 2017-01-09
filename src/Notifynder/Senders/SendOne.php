@@ -30,6 +30,7 @@ class SendOne implements DefaultSender
      * Send Single notification.
      *
      * @param  StoreNotification $sender
+     *
      * @return mixed
      */
     public function send(StoreNotification $sender)
@@ -48,7 +49,7 @@ class SendOne implements DefaultSender
      */
     protected function hasCategory()
     {
-        if (! array_key_exists('category_id', $this->infoNotification)) {
+        if (!array_key_exists('category_id', $this->infoNotification)) {
             $error = 'Category not found please provide one,
                      you can not store a notification without category id';
 

@@ -50,6 +50,7 @@ class TranslatorManager implements NotifynderTranslator
      *
      * @param $language
      * @param $nameCategory
+     *
      * @return mixed
      * @throws NotificationLanguageNotFoundException
      * @throws NotificationTranslationNotFoundException
@@ -70,6 +71,7 @@ class TranslatorManager implements NotifynderTranslator
      * Get selected language of translations.
      *
      * @param $language
+     *
      * @return mixed
      * @throws NotificationLanguageNotFoundException
      */
@@ -98,7 +100,7 @@ class TranslatorManager implements NotifynderTranslator
         // If the file exists
         if (file_exists($filePath)) {
             // Check if is not expired
-            if (! $this->compiler->isExpired()) {
+            if (!$this->compiler->isExpired()) {
                 // Return the cached file in
                 // an array
                 return json_decode(

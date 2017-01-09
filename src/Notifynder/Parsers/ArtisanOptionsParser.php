@@ -12,11 +12,12 @@ class ArtisanOptionsParser
      * name, name2, name3.
      *
      * @param  string $fields
+     *
      * @return array
      */
     public function parse($fields)
     {
-        if (! $fields) {
+        if (!$fields) {
             return [];
         }
 

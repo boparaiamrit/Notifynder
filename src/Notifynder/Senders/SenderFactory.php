@@ -31,7 +31,7 @@ class SenderFactory
      * @param NotifynderCategory $notifynderCategory
      */
     public function __construct(NotifynderGroup $notifynderGroup,
-                         NotifynderCategory $notifynderCategory)
+                                NotifynderCategory $notifynderCategory)
     {
         $this->notifynderGroup = $notifynderGroup;
         $this->notifynderCategory = $notifynderCategory;
@@ -43,6 +43,7 @@ class SenderFactory
      *
      * @param  array                $infoNotifications
      * @param                       $category
+     *
      * @return SendMultiple|SendOne
      */
     public function getSender($infoNotifications, $category = null)
@@ -66,6 +67,7 @@ class SenderFactory
      *
      * @param  array   $infoNotifications
      * @param          $category
+     *
      * @return SendOne
      */
     public function sendSingle(array $infoNotifications, $category)
@@ -76,7 +78,8 @@ class SenderFactory
     /**
      * Send Multiple Notification Sender.
      *
-     * @param  array        $infoNotifications
+     * @param  array $infoNotifications
+     *
      * @return SendMultiple
      */
     public function sendMultiple(array $infoNotifications)
@@ -89,6 +92,7 @@ class SenderFactory
      *
      * @param  string           $groupName
      * @param  array | \Closure $info
+     *
      * @return SendGroup
      */
     public function sendGroup($groupName, array $info)
@@ -106,6 +110,7 @@ class SenderFactory
      * multidimensional.
      *
      * @param $arr
+     *
      * @return bool
      */
     protected function isMultiArray(array $arr)

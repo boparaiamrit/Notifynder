@@ -28,7 +28,7 @@ class GroupManager implements NotifynderGroup
      * @param NotifynderGroupCategoryDB $groupCategory
      */
     public function __construct(NotifynderGroupDB $groupRepo,
-                         NotifynderGroupCategoryDB $groupCategory)
+                                NotifynderGroupCategoryDB $groupCategory)
     {
         $this->groupRepo = $groupRepo;
         $this->groupCategory = $groupCategory;
@@ -38,6 +38,7 @@ class GroupManager implements NotifynderGroup
      * Find a group by id.
      *
      * @param $groupId
+     *
      * @return \Illuminate\Database\Eloquent\Collection|\Illuminate\Database\Eloquent\Model|static
      * @throws \Boparaiamrit\Notifynder\Exceptions\NotifynderGroupNotFoundException
      */
@@ -57,6 +58,7 @@ class GroupManager implements NotifynderGroup
      * Find a group By name.
      *
      * @param $groupName
+     *
      * @return mixed
      * @throws \Boparaiamrit\Notifynder\Exceptions\NotifynderGroupNotFoundException
      */
@@ -78,6 +80,7 @@ class GroupManager implements NotifynderGroup
      *
      * @param $groupId
      * @param $categoryId
+     *
      * @return mixed
      */
     public function addCategoryToGroupById($groupId, $categoryId)
@@ -91,6 +94,7 @@ class GroupManager implements NotifynderGroup
      *
      * @param $groupName
      * @param $categoryName
+     *
      * @return mixed
      */
     public function addCategoryToGroupByName($groupName, $categoryName)
@@ -121,6 +125,7 @@ class GroupManager implements NotifynderGroup
      * Add a group in the db.
      *
      * @param $name
+     *
      * @throws InvalidArgumentException
      * @return \Illuminate\Database\Eloquent\Model|static
      */
@@ -138,6 +143,7 @@ class GroupManager implements NotifynderGroup
      * Check if a string with dots.
      *
      * @param $name
+     *
      * @return bool
      */
     protected function isStringWithDots($name)

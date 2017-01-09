@@ -13,6 +13,7 @@ interface NotifynderGroup
      * Find a group by id.
      *
      * @param $groupId
+     *
      * @return \Illuminate\Database\Eloquent\Collection|\Illuminate\Database\Eloquent\Model|static
      * @throws \Boparaiamrit\Notifynder\Exceptions\NotifynderGroupNotFoundException
      */
@@ -22,6 +23,7 @@ interface NotifynderGroup
      * Find a group By name.
      *
      * @param $groupName
+     *
      * @return mixed
      * @throws \Boparaiamrit\Notifynder\Exceptions\NotifynderGroupNotFoundException
      */
@@ -33,6 +35,7 @@ interface NotifynderGroup
      *
      * @param $groupId
      * @param $categoryId
+     *
      * @return mixed
      */
     public function addCategoryToGroupById($groupId, $categoryId);
@@ -43,6 +46,7 @@ interface NotifynderGroup
      *
      * @param $groupName
      * @param $categoryName
+     *
      * @return mixed
      */
     public function addCategoryToGroupByName($groupName, $categoryName);
@@ -60,6 +64,7 @@ interface NotifynderGroup
      * Add a group in the db.
      *
      * @param $name
+     *
      * @throws InvalidArgumentException
      * @return \Illuminate\Database\Eloquent\Model|static
      */

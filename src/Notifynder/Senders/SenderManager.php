@@ -3,11 +3,11 @@
 namespace Boparaiamrit\Notifynder\Senders;
 
 use BadMethodCallException;
-use Closure;
 use Boparaiamrit\Notifynder\Contracts\DefaultSender;
 use Boparaiamrit\Notifynder\Contracts\NotifynderSender;
 use Boparaiamrit\Notifynder\Contracts\Sender;
 use Boparaiamrit\Notifynder\Contracts\StoreNotification;
+use Closure;
 use Illuminate\Contracts\Container\Container;
 use LogicException;
 
@@ -39,11 +39,11 @@ class SenderManager implements NotifynderSender
     /**
      * @param SenderFactory     $senderFactory
      * @param StoreNotification $storeNotification
-     * @param Container       $container
+     * @param Container         $container
      */
     public function __construct(SenderFactory $senderFactory,
-                         StoreNotification $storeNotification,
-                         Container $container)
+                                StoreNotification $storeNotification,
+                                Container $container)
     {
         $this->senderFactory = $senderFactory;
         $this->storeNotification = $storeNotification;
@@ -55,6 +55,7 @@ class SenderManager implements NotifynderSender
      *
      * @param  array $info
      * @param  null  $category
+     *
      * @return mixed
      */
     public function send($info, $category = null)
@@ -67,6 +68,7 @@ class SenderManager implements NotifynderSender
      *
      * @param  array $info
      * @param        $category
+     *
      * @return mixed
      */
     public function sendNow($info, $category = null)
@@ -82,6 +84,7 @@ class SenderManager implements NotifynderSender
      *
      * @param $info
      * @param $category
+     *
      * @return SendOne
      */
     public function sendOne($info, $category = null)
@@ -95,12 +98,13 @@ class SenderManager implements NotifynderSender
      * older version.
      *
      * @param $info
+     *
      * @return SendMultiple
      */
     public function sendMultiple($info)
     {
         return $this->senderFactory->sendMultiple($info)
-                    ->send($this->storeNotification);
+            ->send($this->storeNotification);
     }
 
     /**
@@ -109,6 +113,7 @@ class SenderManager implements NotifynderSender
      *
      * @param        $groupName
      * @param  array $info
+     *
      * @return mixed
      */
     public function sendGroup($groupName, $info = [])
@@ -125,6 +130,7 @@ class SenderManager implements NotifynderSender
      *
      * @param           $name
      * @param  callable $extendSender
+     *
      * @return $this
      */
     public function extend($name, $extendSender)
@@ -139,6 +145,7 @@ class SenderManager implements NotifynderSender
      *
      * @param $customMethod
      * @param $notification
+     *
      * @return mixed
      */
     public function customSender($customMethod, $notification)
@@ -174,7 +181,7 @@ class SenderManager implements NotifynderSender
             throw new LogicException($error);
         }
 
-        $error = "The method $customMethod does not exists on the class ".get_class($this);
+        $error = "The method $customMethod does not exists on the class " . get_class($this);
         throw new BadMethodCallException($error);
     }
 
@@ -184,6 +191,7 @@ class SenderManager implements NotifynderSender
      *
      * @param $name
      * @param $arguments
+     *
      * @return mixed
      */
     public function __call($name, $arguments)

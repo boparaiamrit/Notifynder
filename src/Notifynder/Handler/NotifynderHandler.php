@@ -13,8 +13,9 @@ class NotifynderHandler
     /**
      * Handle the event.
      *
-     * @param NotifyListener  $eventListener
-     * @param null            $notifynder
+     * @param NotifyListener $eventListener
+     * @param null           $notifynder
+     *
      * @return mixed
      */
     public function handle(NotifyListener $eventListener, $notifynder = null)
@@ -55,6 +56,7 @@ class NotifynderHandler
      * ['postAdd'] whenPostAdd]
      *
      * @param $eventName
+     *
      * @return bool
      */
     protected function listenerIsRegistered($eventName)
@@ -70,13 +72,14 @@ class NotifynderHandler
      * given user@postAdd -> postAdd
      *
      * @param $event
+     *
      * @return string
      */
     protected function getEventName($event)
     {
         // Remove the Notifynder namespaces for
         // the find the method
-        $event = str_replace(Dispatcher::$defaultWildcard.'.', '', $event);
+        $event = str_replace(Dispatcher::$defaultWildcard . '.', '', $event);
 
         $eventNameSpace = (strpos($event, '@'))
             ? explode('@', $event)
@@ -109,13 +112,14 @@ class NotifynderHandler
      * to send.
      *
      * @param $notificationsResult
+     *
      * @return bool
      */
     protected function hasNotificationToSend($notificationsResult)
     {
         return is_array($notificationsResult)
-        and count($notificationsResult) > 0
-        and $notificationsResult[0] !== false
-        and count($notificationsResult[0]) > 0;
+            and count($notificationsResult) > 0
+            and $notificationsResult[0] !== false
+            and count($notificationsResult[0]) > 0;
     }
 }

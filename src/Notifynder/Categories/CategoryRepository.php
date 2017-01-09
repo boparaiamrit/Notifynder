@@ -31,6 +31,7 @@ class CategoryRepository implements CategoryDB
      * Find By Id.
      *
      * @param $categoryId
+     *
      * @return mixed
      */
     public function find($categoryId)
@@ -42,12 +43,13 @@ class CategoryRepository implements CategoryDB
      * Find by name.
      *
      * @param $name
+     *
      * @return mixed
      */
     public function findByName($name)
     {
         return $this->categoryModel->where('name', $name)
-                    ->first();
+            ->first();
     }
 
     /**
@@ -55,12 +57,13 @@ class CategoryRepository implements CategoryDB
      * lists of ids.
      *
      * @param $name
+     *
      * @return mixed
      */
     public function findByNames(array $name)
     {
         return $this->categoryModel->whereIn('name', $name)
-                    ->get();
+            ->get();
     }
 
     /**
@@ -68,6 +71,7 @@ class CategoryRepository implements CategoryDB
      *
      * @param  array  $name
      * @param         $text
+     *
      * @return static
      */
     public function add($name, $text)
@@ -79,24 +83,26 @@ class CategoryRepository implements CategoryDB
      * Delete category by ID.
      *
      * @param $categoryId
+     *
      * @return mixed
      */
     public function delete($categoryId)
     {
         return $this->categoryModel->where('id', $categoryId)
-                    ->delete();
+            ->delete();
     }
 
     /**
      * Delete category by name.
      *
      * @param $name
+     *
      * @return mixed
      */
     public function deleteByName($name)
     {
         return $this->categoryModel->where('name', $name)
-                    ->delete();
+            ->delete();
     }
 
     /**
@@ -104,11 +110,12 @@ class CategoryRepository implements CategoryDB
      *
      * @param  array $data
      * @param        $categoryId
+     *
      * @return mixed
      */
     public function update(array $data, $categoryId)
     {
         return $this->categoryModel->where('id', $categoryId)
-                    ->update($data);
+            ->update($data);
     }
 }
